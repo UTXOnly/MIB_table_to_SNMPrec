@@ -4,7 +4,7 @@ Scripts to convert MIB table output to SNMPrec format to mimic networking device
 ## Instructions
 This is a very simple script to run, but before running, you will need to select a MIB table name from [Online MIB Browser](https://bestmonitoringtools.com/mibdb/mibdb_search.php)
 * Example:
-* 
+
 ![Example video of usage](https://user-images.githubusercontent.com/49233513/198919931-64d9b405-86a8-489a-baa9-553981c09775.gif)
 
 
