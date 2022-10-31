@@ -44,7 +44,7 @@ def create_snmp_rec(dict_to_scan):
     
 
 
-test_func = str(create_snmp_rec(mib_dictionary.values()))
+create_snmp_rec(mib_dictionary.values())
 
 
 
