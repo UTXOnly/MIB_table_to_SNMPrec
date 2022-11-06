@@ -1,4 +1,4 @@
-# SNMPwalk_to_SNMPrec
+# MIB_table_to_SNMPrec
 Scripts to convert MIB table output to SNMPrec format to mimic networking devices
 
 ## Instructions
