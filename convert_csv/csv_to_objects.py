@@ -1,4 +1,5 @@
 import csv
+import objects_to_snmprec as objects_to_snmprec
 
 # Defining empty lists to seperate csv data
 mibs = []
@@ -45,7 +46,8 @@ class mib_entry:
             print("- column:","\n    OID:", self.oid, "\n    name:", self.mib)
 
 def parse_csv(csv_to_analyize):
-    with open('file_to_analyize.csv', mode='r') as csv_file:
+    #csv_file = csv_to_analyize 
+    with open(csv_to_analyize, mode='r') as csv_file:
         csv_file_opened = csv.reader(csv_file, delimiter=',')
 
         for row in csv_file_opened:
@@ -100,12 +102,14 @@ def extract_list(list_to_extract):
     while i < (len(list_to_extract)):
         obj = mib_entry(mibs[i], oids[i], data_types[i], object_permissions[i], object_classes[i], object_node_types[i], object_descriptions[i])
         mib_entry_objects.append(obj)
-        print(obj)   
+        #print(obj)   
         i += 1
         obj.convert_object()
 
 # Calling functons to parse csv and turn entrys into objects of the class mib_entry
-parse_csv('file_to_analyize.csv')
+parse_csv('./csv+snmprec/file_to_analyize.csv')
 extract_list(line_count)
-
-print(len(mibs), len(oids), len(data_types), len(object_permissions), len(object_classes), len(object_node_types), len(object_descriptions))
+objects_to_snmprec.create_snmp_rec(mib_entry_objects)
+print("Checking lengths of csv column lists \n")
+print( len(mibs), len(oids), len(data_types), len(object_permissions), len(object_classes), len(object_node_types), len(object_descriptions))
+print ("\nAll values in this row should be equal, otheriwise parsing csv has failed")

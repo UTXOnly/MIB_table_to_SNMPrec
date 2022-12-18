@@ -1,10 +1,10 @@
 import random
 
-#snmprec_to_export = open("mocksnmp.snmprec", "w")
+
 
 def create_snmp_rec(list_to_scan):
     data_type = [2,4,5,6,64,65,66,67,68,70]
-    snmprec_to_export = open("mocksnmp.snmprec", "w")
+    snmprec_to_export = open("./csv+snmprec/mocksnmp.snmprec", "w")
     for row in list_to_scan:
         metric_value = random.randint(1,22)
         string_value = random.choice(['Cisco', 'Juniper', 'Sophos'])
