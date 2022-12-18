@@ -3,7 +3,6 @@
 #Download MIB table, remove the first line containing "---", output to file_to_analyize.yaml
 
 curl https://bestmonitoringtools.com/mibdb/mibs_csv/${1}.csv | tail -n +1 > ./csv+snmprec/file_to_analyize.csv
-#https://bestmonitoringtools.com/mibdb/mibs_csv/IF-MIB.csv
 wait
 
 mib_name=$1
